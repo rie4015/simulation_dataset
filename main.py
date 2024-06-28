@@ -5,10 +5,20 @@ import pybullet_data
 import pandas as pd
 
 
+air_friction_coefficient = 0.1
+
+# Применение силы сопротивления воздуха к объекту
+def apply_air_friction(object_id, linear_velocity):
+    air_friction_force = [-air_friction_coefficient * v for v in linear_velocity]
+    p.applyExternalForce(object_id, -1, forceObj=air_friction_force, posObj=[0,0,0], flags=p.LINK_FRAME)
+
+
+
+
 PB_BallMass = 0.450  # масса шара
 PB_BallRadius = 0.35  # радиус шара
 # Инициализация PyBullet
-physicsClient = p.connect(p.DIRECT, options=' --mp4=moviename.mp4')# запись видео
+physicsClient = p.connect(p.GUI, options=' --mp4=moviename.mp4')# запись видео
 # Установка параметров камеры
 cameraDistance = 30
 cameraYaw = 0
@@ -67,6 +77,8 @@ for i in range(60):
     j = 0
     while pos[2] > PB_BallRadius:
         p.stepSimulation()
+        linearVelocity, _ = p.getBaseVelocity(ball.p_ballId)
+        apply_air_friction(ball.p_ballId, linearVelocity)
         pos, _ = p.getBasePositionAndOrientation(ball.p_ballId)
         df = df._append({'Throw_ID': i,'time_step': j, 'pos_x': pos[0], 'pos_y': pos[1], 'pos_z': pos[2]}, ignore_index=True)
         #time.sleep(1. / 240.)
