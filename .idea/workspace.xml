@@ -7,7 +7,7 @@
     <list default="true" id="f682bff3-6300-42fd-a34e-5d1a80a6b1ed" name="Changes" comment="gendataset">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simulation_dataset.csv" beforeDir="false" afterPath="$PROJECT_DIR$/simulation_dataset.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation_dataset.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,22 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1.executor": "Run",
-    "Python.Ball.executor": "Run",
-    "Python.createObstacleCourse.executor": "Run",
-    "Python.createVisualShapeArray.executor": "Run",
-    "Python.ex.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.satCollision.executor": "Run",
-    "Python.signedDistanceField.executor": "Run",
-    "Python.transparent.executor": "Run",
-    "Python.video_sync_mp4.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "datasets"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Ball.executor&quot;: &quot;Run&quot;,
+    &quot;Python.createObstacleCourse.executor&quot;: &quot;Run&quot;,
+    &quot;Python.createVisualShapeArray.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.satCollision.executor&quot;: &quot;Run&quot;,
+    &quot;Python.signedDistanceField.executor&quot;: &quot;Run&quot;,
+    &quot;Python.transparent.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_sync_mp4.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;datasets&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProject3" />
@@ -126,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719578402244</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="gendataset">
+      <option name="closed" value="true" />
+      <created>1719596363178</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719596363178</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

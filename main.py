@@ -58,15 +58,14 @@ class Ball():
 #ball = Ball([0, 0, 2],[0, 0, 0, 1])
 # Подготовка DataFrame для записи данных
 df = pd.DataFrame(columns=['Throw_ID','time_step', 'pos_x', 'pos_y', 'pos_z'])
-steps = 10000
+steps = 5000
 # Цикл симуляции и запись данных
 start = time.time()
 end = time.time() - start
 for i in range(steps):
     print(i, '/', steps, end)
     start = time.time()
-    # print(sys.getsizeof(df))
-
+    print(sys.getsizeof(df))
     p.resetSimulation()
     p.setGravity(0, 0, -9.81)
     # Создание формы коллизии для поверхности (например, плоскости)
@@ -89,7 +88,6 @@ for i in range(steps):
     p_xforce[0], p_yforce[0],p_zforce[0] = 1000,1000,10000
     p.applyExternalForce(ball.p_ballId, -1, [p_xforce[0], p_yforce[0], p_zforce[0]], [0,0,0], p.LINK_FRAME)
     pos, _ = p.getBasePositionAndOrientation(ball.p_ballId)
-    j = 0
     for j in range(1024):
         p.stepSimulation()
         linearVelocity, _ = p.getBaseVelocity(ball.p_ballId)
@@ -98,9 +96,12 @@ for i in range(steps):
         df = df._append({'Throw_ID': i,'time_step': j, 'pos_x': pos[0], 'pos_y': pos[1], 'pos_z': pos[2]}, ignore_index=True)
         # time.sleep(1. / 240.)
     end = time.time() - start
+    df.to_csv('simulation_dataset.csv', index=False, mode='a', header=False)
+    df.drop(df.index, inplace=True)
+
 
 # Сохраняем датасет
-df.to_csv('simulation_dataset.csv', index=False)
+#df.to_csv('simulation_dataset.csv', index=False, mode='a')
 
 # Закрытие PyBullet
 p.disconnect()
